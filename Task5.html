@@ -1,0 +1,36 @@
+// Task 5: Image Slider (JavaScript & DOM)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+</head>
+<body>
+    <div>
+        <img id="slider" src="image1.jpg" width="400">
+        <button onclick="prevImage()">Previous</button>
+        <button onclick="nextImage()">Next</button>
+    </div>
+
+    <script>
+        let images = ["image1.jpg", "image2.jpg", "image3.jpg"];
+        let index = 0;
+
+        function showImage() {
+            document.getElementById("slider").src = images[index];
+        }
+
+        function nextImage() {
+            index = (index + 1) % images.length;
+            showImage();
+        }
+
+        function prevImage() {
+            index = (index - 1 + images.length) % images.length;
+            showImage();
+        }
+    </script>
+</body>
+</html>
